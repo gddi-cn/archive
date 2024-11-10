@@ -38,7 +38,9 @@ public:
      * @param objects 
      * @return std::vector<AlgoObject> 
      */
-    virtual std::vector<AlgoObject> infer_result_process(const std::vector<AlgoObject> &objects) { return objects; }
+    virtual std::vector<AlgoObject> infer_result_process(const std::vector<AlgoObject> &objects) {
+        throw std::runtime_error("infer_result_process not implemented");
+    }
 
     /**
      * @brief 跟踪结果处理
@@ -46,14 +48,16 @@ public:
      * @param objects 
      * @return std::vector<AlgoObject> 
      */
-    virtual std::vector<AlgoObject> tracked_result_process(const std::vector<AlgoObject> &objects) { return objects; }
+    virtual std::vector<AlgoObject> tracked_result_process(const std::vector<AlgoObject> &objects) {
+        throw std::runtime_error("tracked_result_process not implemented");
+    }
 
     /**
      * @brief 获取插件名称
      * 
      * @return std::string 
      */
-    virtual std::string get_plugin_name() const { return plugin_name_; }
+    std::string get_plugin_name() const { return plugin_name_; }
 
     /**
      * @brief 获取插件参数
